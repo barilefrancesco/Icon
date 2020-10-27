@@ -1,0 +1,511 @@
+id,name,id_sub_genre
+152,dub,12
+154,dubstep,17
+171,electropunk,26
+173,emo pop,23
+174,emocore,26
+175,enka,27
+179,eurodance,21
+344,new jack swing,3
+345,new romantic,24
+346,new wave,12
+348,no wave,24
+349,noise,22
+353,non-music,28
+358,nu metal,25
+377,pop soul,23
+382,post-hardcore,26
+387,power metal,25
+397,psy-trance,20
+402,psychobilly,26
+409,ragga,8
+452,southern soul,4
+496,visual kei,27
+63,breaks,12
+208,gabber,12
+4,acid techno,15
+6,acoustic rock,24
+7,afoxê,27
+11,alternative folk,24
+14,alternative pop,23
+16,alternative rock,24
+17,ambient,13
+19,ambient house,13
+20,ambient techno,13
+23,aor,24
+25,art pop,23
+29,audiobook,28
+30,avant-garde,24
+33,avant-garde pop,23
+35,bachata,27
+36,ballad,28
+37,barbershop,28
+39,bass house,14
+41,bebop,3
+42,bhangra,27
+68,bubblegum pop,23
+69,cajun,27
+70,calypso,27
+73,cantopop,23
+75,celtic,27
+76,celtic punk,26
+77,chachachá,27
+78,chamber pop,23
+83,chillout,12
+84,chiptune,12
+87,christmas music,23
+88,chutney,27
+89,city pop,23
+91,classic country,24
+92,classic jazz,3
+93,classic rock,24
+94,classical,27
+96,club,12
+97,comedy,28
+99,compas,27
+104,contemporary folk,27
+105,contemporary gospel,11
+107,contemporary r&b,2
+108,contra,27
+110,country,27
+111,country blues,2
+113,country pop,27
+114,country rock,24
+115,coupé-décalé,27
+116,cowpunk,26
+119,cumbia,27
+120,cumbia villera,27
+121,cyberpunk,12
+122,d-beat,24
+123,dance,10
+127,dansband,27
+128,dark ambient,13
+132,death metal,25
+134,deathcore,25
+136,deathrock,24
+138,delta blues,2
+139,descarga,27
+141,detroit techno,15
+176,ethereal,24
+178,eurobeat,12
+180,europop,23
+181,exotica,27
+184,fado,27
+185,filk,28
+187,folk,27
+189,folk pop,23
+192,folktronica,12
+194,free improvisation,28
+195,free jazz,3
+197,funk carioca,12
+198,funk metal,25
+200,funk soul,24
+202,fusion,3
+248,hi-nrg,12
+250,hip hop,6
+254,horror punk,26
+256,house,14
+257,idm,12
+261,indie pop,23
+169,electronicore,18
+170,electropop,23
+356,nu disco,12
+357,nu jazz,12
+361,oi,26
+363,old-time,2
+364,opera,28
+367,p-funk,24
+371,polka,27
+419,reggae,8
+420,reggaeton,8
+423,rock,24
+425,rockabilly,24
+426,rocksteady,8
+429,rumba,27
+432,samba,27
+5,acoustic blues,2
+22,anarcho-punk,26
+38,baroque,28
+238,hardcore hip hop,6
+249,hindustani classical,27
+258,illbient,12
+262,indie rock,24
+280,jazz rap,3
+293,latin pop,23
+298,lo-fi hip hop,12
+304,mainstream rock,24
+314,melodic death metal,25
+315,melodic metalcore,25
+316,melodic rock,24
+317,melodic trance,12
+318,mento,27
+319,merengue,27
+321,metalcore,25
+322,miami bass,12
+323,microhouse,14
+324,milonga,27
+327,minimal,12
+330,modern blues,2
+332,modern country,9
+333,motown,10
+334,mpb,27
+335,musical,28
+336,neo soul,4
+337,neo-progressive rock,24
+338,neo-rockabilly,24
+340,neofolk,12
+341,nerdcore,7
+343,new age,12
+18,ambient dub,13
+26,art punk,26
+34,avant-prog,24
+43,big band,3
+72,canterbury scene,24
+79,champeta,27
+86,christian rock,26
+98,comedy rock,28
+103,contemporary classical,27
+112,country folk,27
+124,dance-pop,23
+421,rhythmic noise,22
+441,slow waltz,28
+447,son cubano,27
+459,stoner metal,25
+464,swamp rock,24
+478,thrash metal,25
+485,tribal ambient,28
+490,uk funky,5
+217,glitch,12
+218,goa trance,20
+220,gospel,11
+221,gothic,28
+224,grebo,24
+225,grime,12
+228,group sounds,24
+229,grunge,24
+231,guajira,27
+233,happy hardcore,18
+235,hard house,14
+236,hard rock,24
+237,hard trance,20
+240,hardcore techno,15
+241,hardstyle,12
+242,harsh noise,22
+247,heavy rock,24
+260,indie folk,12
+274,italo-disco,27
+282,jazz-funk,3
+290,krautrock,24
+296,line dance,21
+311,mathcore,25
+9,alternative country,27
+74,carnatic classical,27
+359,nueva canción,27
+368,pachanga,27
+376,pop rock,24
+408,r&b,2
+417,rave,12
+424,rock and roll,24
+431,salsa,27
+433,schlager,27
+434,screamo,26
+437,singer-songwriter,3
+438,ska,26
+439,ska punk,26
+440,skacore,26
+443,smooth jazz,3
+472,synthwave,12
+473,tango,27
+476,techno,15
+477,teen pop,23
+479,thrashcore,25
+480,timba,27
+489,uk drill,12
+131,dark wave,25
+151,drum and bass,24
+158,edm,12
+164,electro-industrial,19
+172,emo,26
+213,garage rock,24
+273,irish folk,27
+320,metal,25
+325,min'yō,27
+339,neo-traditional country,9
+350,noise pop,23
+365,orchestral,28
+177,euro house,14
+193,freak folk,24
+199,funk rock,5
+251,hip house,14
+259,indie,8
+265,industrial,10
+278,jazz blues,3
+279,jazz fusion,24
+281,jazz rock,24
+283,joik,27
+284,jungle,12
+285,k-pop,27
+288,kizomba,27
+289,klezmer,27
+291,latin,27
+292,latin jazz,3
+295,leftfield,12
+297,lo-fi,12
+299,lounge,12
+300,lovers rock,24
+302,luk thung,27
+305,maloya,27
+306,mambo,27
+153,dub techno,15
+347,nightcore,18
+415,rap rock,24
+15,alternative punk,26
+47,blackgaze,25
+82,chicago blues,2
+100,complextro,12
+117,crossover prog,24
+190,folk punk,26
+255,horrorcore,6
+263,indietronica,12
+270,instrumental,28
+271,instrumental jazz,3
+162,electro swing,19
+163,electro-funk,19
+165,electroclash,19
+166,electronic,19
+167,electronic rock,24
+168,electronica,19
+362,old school death metal,25
+390,production music,28
+418,red song,27
+491,uk garage,12
+219,goregrind,25
+310,math rock,24
+328,minimal techno,15
+510,progressive death,25
+137,deep house,14
+58,bossa nova,3
+59,bounce,23
+60,breakbeat,12
+62,breakcore,18
+64,britpop,24
+65,broken beat,12
+66,brostep,17
+204,future garage,12
+205,future jazz,12
+207,g-funk,5
+210,garage,12
+211,garage house,14
+212,garage punk,26
+214,glam,24
+216,glam rock,24
+230,guaguancó,27
+253,hopepunk,26
+388,power pop,23
+444,smooth soul,4
+463,swamp pop,23
+331,modern classical,27
+287,kayōkyoku,27
+307,mandopop,23
+308,martial industrial,12
+393,progressive house,14
+401,psychedelic rock,24
+149,drill and bass,12
+155,dungeon synth,25
+351,noise rock,24
+215,glam metal,25
+24,arena rock,24
+67,brutal death metal,25
+90,classic blues,2
+106,contemporary jazz,3
+129,dark electro,19
+188,folk metal,25
+252,honky tonk,3
+366,outlaw country,9
+372,pop,23
+374,pop punk,26
+375,pop rap,7
+379,post-bop,3
+380,post-classical,28
+381,post-grunge,24
+384,post-punk,26
+386,power electronics,19
+389,powerviolence,25
+391,progressive,24
+395,progressive rock,24
+396,progressive trance,20
+398,psychedelic,24
+399,psychedelic folk,27
+403,psytrance,16
+404,punk,26
+405,punk rock,27
+406,qawwali,27
+407,queercore,26
+410,ragga hip-hop,8
+412,ragtime,3
+413,raï,27
+414,ranchera,27
+416,rapcore,26
+427,romantic classical,28
+57,boom bap,23
+191,folk rock,24
+266,industrial metal,25
+329,minimal wave,12
+10,alternative dance,21
+436,shoegaze,24
+226,grindcore,25
+243,harsh noise wall,22
+400,psychedelic pop,23
+445,soca,10
+446,soft rock,24
+448,son montuno,27
+450,soul jazz,4
+451,southern rock,24
+453,space age pop,23
+454,space rock,24
+456,speed metal,25
+457,spoken word,7
+458,steampunk,26
+460,stoner rock,24
+462,surf rock,24
+465,swing,3
+466,symphonic black metal,25
+467,symphonic metal,25
+468,symphonic prog,24
+470,symphony,28
+142,digital hardcore,18
+183,experimental rock,24
+294,latin rock,24
+13,alternative metal,25
+378,pornogrind,25
+133,death-doom metal,25
+161,electro house,14
+12,alternative hip hop,6
+209,gangsta rap,7
+481,traditional country,24
+411,ragga jungle,12
+422,ritual ambient,13
+430,ryūkōka,27
+28,atmospheric black metal,25
+54,bongo flava,27
+486,tribal house,14
+492,underground hip hop,6
+125,dance-punk,23
+144,doo-wop,2
+150,drone,25
+156,east coast hip hop,6
+373,pop metal,23
+8,afrobeat,27
+32,avant-garde metal,25
+80,changüí,27
+101,conscious hip hop,6
+126,dancehall,10
+182,experimental,12
+203,future bass,12
+369,pagode,27
+3,acid rock,24
+44,big beat,12
+46,blackened death metal,25
+48,blue-eyed soul,4
+49,bluegrass,27
+50,blues,2
+51,blues rock,2
+53,bolero son,27
+55,boogie rock,24
+482,trance,20
+483,trap,7
+484,trap edm,7
+487,trip hop,12
+488,turntablism,6
+493,vallenato,27
+95,classical crossover,27
+102,contemporary christian,27
+109,cool jazz,3
+118,crust punk,26
+135,deathgrind,25
+140,desert rock,24
+143,disco,10
+196,funk,5
+201,funky house,14
+206,futurepop,12
+227,groove metal,25
+234,hard bop,3
+286,kawaii metal,27
+326,mincecore,25
+342,neurofunk,12
+130,dark folk,12
+223,gothic rock,24
+246,heavy psych,24
+383,post-metal,25
+474,tech house,14
+245,heavy metal,25
+272,instrumental rock,24
+301,luk krung,27
+309,maskanda,27
+312,medieval,27
+1,acid house,14
+2,acid jazz,12
+21,americana,27
+27,art rock,24
+40,beat music,23
+45,black metal,25
+52,bolero,27
+56,boogie-woogie,2
+61,breakbeat hardcore,18
+71,candombe,27
+81,chanson,28
+352,noisecore,18
+354,norteño,27
+355,northern soul,4
+360,occult rock,24
+370,phonk,6
+385,post-rock,24
+147,dream pop,23
+264,indorock,24
+268,industrial rock,24
+269,industrial techno,15
+275,j-pop,23
+276,j-rock,24
+277,jazz,3
+145,doom metal,25
+146,downtempo,12
+148,drill,12
+157,ebm,21
+159,electric blues,2
+160,electro,19
+494,vaporwave,12
+222,gothic metal,25
+232,guaracha,27
+239,hardcore punk,26
+244,hauntology,12
+267,industrial musical,24
+303,madchester,24
+31,avant-garde jazz,3
+394,progressive metal,25
+435,shibuya-kei,27
+442,sludge metal,25
+449,soul,4
+455,speed garage,12
+461,street punk,26
+469,symphonic rock,24
+475,technical death metal,25
+85,chopped and screwed,23
+186,flamenco,27
+313,melodic black metal,25
+392,progressive folk,27
+428,roots reggae,8
+471,synth-pop,23
+495,viking metal,25
+497,vocal house,14
+498,vocal jazz,3
+499,vocal trance,20
+500,waltz,28
+501,west coast hip hop,6
+502,west coast swing,3
+503,western swing,3
+504,yacht rock,24
+505,yé-yé,27
+506,zamrock,27
+507,zeuhl,24
+508,zouk,27
+509,zydeco,2
