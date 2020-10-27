@@ -1,0 +1,294 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>postgreSQL module &#8212; Music Advisor  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-postgreSQL">
+<span id="postgresql-module"></span><h1>postgreSQL module<a class="headerlink" href="#module-postgreSQL" title="Permalink to this headline">¶</a></h1>
+<p>&#64;author: Francesco Barile 677396</p>
+<dl class="function">
+<dt id="postgreSQL.backup_music_database">
+<code class="descclassname">postgreSQL.</code><code class="descname">backup_music_database</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.backup_music_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che esegue il backup del database all’interno di file csv, posizionati nella cartella tmp del pc</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.conn_close_db">
+<code class="descclassname">postgreSQL.</code><code class="descname">conn_close_db</code><span class="sig-paren">(</span><em>conn</em><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.conn_close_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione utilizzata per chiudere la connessione al database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>conn</strong> – dict , connesione al database da chiudere.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">boolean, True se la connesione viene chiusa correttamente, False altrimenti.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.conn_db">
+<code class="descclassname">postgreSQL.</code><code class="descname">conn_db</code><span class="sig-paren">(</span><em>user</em>, <em>database</em><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.conn_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione utilizzata per creare una connessione con il database.
+:param user: str, utente con cui accediamo al db.
+:param database: str, nome del database
+:return: dict, contiene le chiavi cursor e connection per effettuare le operazioni sul db selezionato.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.create_album">
+<code class="descclassname">postgreSQL.</code><code class="descname">create_album</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.create_album" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che crea la tabella album</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.create_artist">
+<code class="descclassname">postgreSQL.</code><code class="descname">create_artist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.create_artist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che crea la tabella artist</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.create_db">
+<code class="descclassname">postgreSQL.</code><code class="descname">create_db</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.create_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creazione del database</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.create_genre">
+<code class="descclassname">postgreSQL.</code><code class="descname">create_genre</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.create_genre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che crea la tabella genre</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.create_genre_artist">
+<code class="descclassname">postgreSQL.</code><code class="descname">create_genre_artist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.create_genre_artist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che crea la tabella genre_artist</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.create_primary_genre">
+<code class="descclassname">postgreSQL.</code><code class="descname">create_primary_genre</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.create_primary_genre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che crea la tabella primary_genre</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.create_sub_genre">
+<code class="descclassname">postgreSQL.</code><code class="descname">create_sub_genre</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.create_sub_genre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che crea la tabella sub_genre</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.crete_music_database">
+<code class="descclassname">postgreSQL.</code><code class="descname">crete_music_database</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.crete_music_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che utilizza le funzioni precedenti per creare e popolare il database.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.delete_genres_from_list">
+<code class="descclassname">postgreSQL.</code><code class="descname">delete_genres_from_list</code><span class="sig-paren">(</span><em>genres</em>, <em>pos_id_gen</em><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.delete_genres_from_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che restituisce la lista dei generi (id) sottoforma di stringa, escluso quello di riferimento in
+posizione ‘pos_id_gen’.
+:param genres: list, lista degli id dei generi
+:param pos_id_gen: int, posizione del genere (id) da esclude dalla coppia in output.
+:return: str, composto da due generi (id).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.draw_album_table">
+<code class="descclassname">postgreSQL.</code><code class="descname">draw_album_table</code><span class="sig-paren">(</span><em>header</em>, <em>rows</em><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.draw_album_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione utilizzata per stamapre a video una tabella contenete tutti gli album corispondenti alla ricerca
+dell’utente.
+:param header: list, contiene gli elementi dell’header della tabella.
+:param rows: list, lista degli album da inseire nella tabella, con nome e generi associati ad esso.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.draw_artist_table">
+<code class="descclassname">postgreSQL.</code><code class="descname">draw_artist_table</code><span class="sig-paren">(</span><em>header</em>, <em>rows</em><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.draw_artist_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione utilizzata per stamapre a video una tabella contenete tutti gli artisti corispondenti alla ricerca
+dell’utente.
+:param header: list, contiene gli elementi dell’header della tabella.
+:param rows: list, lista degli artist da inseire nella tabella, con nome e generi associati ad esso.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.get_artist_from_id">
+<code class="descclassname">postgreSQL.</code><code class="descname">get_artist_from_id</code><span class="sig-paren">(</span><em>id_artist</em><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.get_artist_from_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che prende in input l’id dell’artista e restituisce il suo nome.
+:param id_artist: str, id dell’artista.
+:return: art_name: str, nome dell’artista</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.get_artist_list">
+<code class="descclassname">postgreSQL.</code><code class="descname">get_artist_list</code><span class="sig-paren">(</span><em>genres</em>, <em>pos_id_gen</em>, <em>limit_num_artist</em><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.get_artist_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che restituisce gli artisti che suonano il genere genres[pos_id_gen], escludendo gli altri due generi.
+:param genres: list,  lista di generi (id)
+:param pos_id_gen: int, posizione del genere da considerare per la lista di artisti in output.
+:param limit_num_artist: int, numero massimo di artisti da cercare all’interno del database.
+:return: list_artist: list, lista di artisti con id e nome, che suonano il genere genres[pos_id_gen], ma non gli
+altri due presenti in genres.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.get_genres_list_from_artist">
+<code class="descclassname">postgreSQL.</code><code class="descname">get_genres_list_from_artist</code><span class="sig-paren">(</span><em>artisti</em><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.get_genres_list_from_artist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che prende in input la lista degli artisti e restiruisce la lista degli id dei generi associati.
+:param artisti: list, lista di artisti
+:return: genres: list, lista degli id relativi ai generi suonati dagli artisti.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.get_id_prim_genre">
+<code class="descclassname">postgreSQL.</code><code class="descname">get_id_prim_genre</code><span class="sig-paren">(</span><em>id_sub_genre</em><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.get_id_prim_genre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che pardendo dall’id del sub_genre, restituisce l’id del suo genere padre presente nella tabella
+primary_genre.
+:param id_sub_genre: str, id genere dalla tabella sub_genre
+:return: p_g: int, id primary_genre padre del genere ‘id_sub_genre’.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.get_id_sub_genre">
+<code class="descclassname">postgreSQL.</code><code class="descname">get_id_sub_genre</code><span class="sig-paren">(</span><em>id_genre</em><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.get_id_sub_genre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che pardendo dall’id del genere, restituisce l’id del suo genere padre presente nella tabella sub_genre.
+:param id_genre: str, id genere dalla tabella genre
+:return: s_g: int, id sub_genre padre del genre ‘id_genre’.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.get_list_artist_three_genres">
+<code class="descclassname">postgreSQL.</code><code class="descname">get_list_artist_three_genres</code><span class="sig-paren">(</span><em>gen_list</em>, <em>input_artist_id_list</em><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.get_list_artist_three_genres" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che restituisce gli artisti che suonano tutti i generi della lista gen_list. (Potrebbe essere vuota)
+:param gen_list: list, lista dei generi (id).
+:param input_artist_id_list: list, lista degli artisti (id) inseriti dall’utente, da escludere nella ricerca.
+:return: lista_artisti: list, lista degli artisti trovati; None, se non viene trovato nessun artista.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.get_list_artist_two_genres">
+<code class="descclassname">postgreSQL.</code><code class="descname">get_list_artist_two_genres</code><span class="sig-paren">(</span><em>gen_list</em>, <em>input_artist_id_list</em><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.get_list_artist_two_genres" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che restituisce gli artisti che suonano due dei tre generi presenti nella lista ‘gen_list’.
+:param gen_list: list, lista di generi (id).
+:param input_artist_id_list: list, lista di artisti inseriti dall’utente, da escludere nella query.
+:return: lista_artisti: list, lista degli artisti trovati; None, se non viene trovato nessun artista.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.get_name_by_id_genre">
+<code class="descclassname">postgreSQL.</code><code class="descname">get_name_by_id_genre</code><span class="sig-paren">(</span><em>id_genre</em><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.get_name_by_id_genre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che prende in input l’id del genere e restituisce il nome associato.
+:param id_genre: str, id del genere.
+:return: n_g: str, nome genere.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.populate_db">
+<code class="descclassname">postgreSQL.</code><code class="descname">populate_db</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.populate_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che popola le tabelle del database attravero i file csv presenti nella cartella dedicata ‘csv_files’</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.search_album_db">
+<code class="descclassname">postgreSQL.</code><code class="descname">search_album_db</code><span class="sig-paren">(</span><em>conn</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.search_album_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che verifica se l’album inserito è presente nel database.
+:param conn: dict, connessione al database.
+:param value: str, nome dell’album di cui si verifica la presenza.
+:return: album_found: dict, contiene le informazioni relative all’album trovato.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="postgreSQL.search_artist_db">
+<code class="descclassname">postgreSQL.</code><code class="descname">search_artist_db</code><span class="sig-paren">(</span><em>conn</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#postgreSQL.search_artist_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che verifica se l’artista è presente nel database
+:param conn: dict, connessione al database.
+:param value: str, nome dell’artista di cui si verifica la presenza.
+:return: artists_found: dict, contiene le informazioni relative all’artista trovato.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Music Advisor</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Francesco Barile.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/postgreSQL.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

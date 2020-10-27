@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>main module &mdash; Music Advisor  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Music Advisor
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/main.html">main module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/postgreSQL.html">postgreSQL module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/markov_chains.html">markov_chains module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/playlist_generator.html">playlist_generator module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/email_requests.html">email_requests module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Music Advisor</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>main module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/rst/main.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-main">
+<span id="main-module"></span><h1>main module<a class="headerlink" href="#module-main" title="Permalink to this headline">¶</a></h1>
+<p>&#64;author: Francesco Barile 677396</p>
+<dl class="py function">
+<dt id="main.classifica_all_genres">
+<code class="sig-prename descclassname">main.</code><code class="sig-name descname">classifica_all_genres</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gen_list</span></em>, <em class="sig-param"><span class="n">input_artist_id_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.classifica_all_genres" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che stampa a video tutti gli artisti presenti nel database che hanno tutti e tre i generi
+della lista ‘gen_list’, sempre se esistono, altriementi prova a cercare gli artisti con coppie di generi.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gen_list</strong> – list, lista degli id_genre</p></li>
+<li><p><strong>input_artist_id_list</strong> – list, lista degli id degli artisti inseriti in input</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="main.classifica_sigle_genre">
+<code class="sig-prename descclassname">main.</code><code class="sig-name descname">classifica_sigle_genre</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n_art_list</span></em>, <em class="sig-param"><span class="n">single_genre_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.classifica_sigle_genre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attravero le interrogazioni al database acquisisco gli artisti con uno ed uno solo dei tre generi in lista,
+successivamente vengono stampati a video attraverso una visualizzazione tabellare.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_art_list</strong> – list, lista del numero di artisti da acquisire per genere.</p></li>
+<li><p><strong>single_genre_list</strong> – list, lista degli id_genre,</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list_of_artist: list, lista di tutti gli artisti classificati.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="main.clear_console">
+<code class="sig-prename descclassname">main.</code><code class="sig-name descname">clear_console</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.clear_console" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione grafica per ripulire la console.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="main.create_playlist_from_music_genre">
+<code class="sig-prename descclassname">main.</code><code class="sig-name descname">create_playlist_from_music_genre</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">generi_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.create_playlist_from_music_genre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che partendo dai generi (id) e la loro percentuale di gradimento, restituisce una playlist di canzoni
+disponibili su spotify.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>generi_list</strong> – list, lista di coppie id_genre-percentuale gradimento.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>tracklists: list, lista di dict contenete ‘titolo’ e ‘artista’</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="main.draw_table_tracklist">
+<code class="sig-prename descclassname">main.</code><code class="sig-name descname">draw_table_tracklist</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">header</span></em>, <em class="sig-param"><span class="n">rows</span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.draw_table_tracklist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione utilizzata per stampare a video una tabella contenete i titoli dellec canzoni e rispettivi artisti.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>header</strong> – list, Contiene gli elementi dell’header della tabella.</p></li>
+<li><p><strong>rows</strong> – list, tracklist da inseire nella tabella, con titolo e artista associati ad esso.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="main.draw_table_two_col">
+<code class="sig-prename descclassname">main.</code><code class="sig-name descname">draw_table_two_col</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">header</span></em>, <em class="sig-param"><span class="n">rows</span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.draw_table_two_col" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione utilizzata per stampare a video una tabella generica di 2 o tre colonne.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>header</strong> – list, Contiene gli elementi dell’header della tabella.</p></li>
+<li><p><strong>rows</strong> – list, lista degli artist da inseire nella tabella, con nome e generi associati ad esso.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="main.exit_from_input">
+<code class="sig-prename descclassname">main.</code><code class="sig-name descname">exit_from_input</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.exit_from_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che serve per capire se l’utente ha intenzione di inserire un altro album o un altro artista.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – string, prende in input le stirnghe ‘album’ o ‘artista’.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>boolean, True, se l’utente desidera inserire un altro ‘name’, False altrimenti.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="main.genres_liked">
+<code class="sig-prename descclassname">main.</code><code class="sig-name descname">genres_liked</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">genre_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.genres_liked" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che stampa a video il tasso percentuale di gradiemto dei generi selezionati.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>genre_list</strong> – list, lista di coppie id_genre-percenutale calcolata con la catena di Markov</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="main.get_genre_list">
+<code class="sig-prename descclassname">main.</code><code class="sig-name descname">get_genre_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">genres_occ</span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.get_genre_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che prende in input la lista delle coppie id_genre-occorrenze e restituisce la lista dei soli id_genre.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>genres_occ</strong> – list, lista delle coppie id_genre-occorrenze</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>g_list: list,  la lista dei soli id_genre</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="main.menu">
+<code class="sig-prename descclassname">main.</code><code class="sig-name descname">menu</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">flag_prob</span></em>, <em class="sig-param"><span class="n">flag_clas</span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.menu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che mostra a video il menu di scelta.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flag_prob</strong> – boolean, serve per verificare che siano stati inseriti gli artisti prima dell’esecuzione della
+atena di Markov.</p></li>
+<li><p><strong>flag_clas</strong> – boolen, verifica l’esecuzione della catena di Markov al fine di poter creare le classifiche e la playlist.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>s: string, è l’ultima scelta effettuata.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="main.num_artist_for_genre">
+<code class="sig-prename descclassname">main.</code><code class="sig-name descname">num_artist_for_genre</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lista_generi</span></em>, <em class="sig-param"><span class="n">n_of_artists</span><span class="o">=</span><span class="default_value">50</span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.num_artist_for_genre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che restituisce il numero di artisti da classificare in base alle occorrenze dei generi
+:param lista_generi: list, contiene id genere-occorrenze per ogni elemento della lista.
+:param n_of_artists: numero degli artisti da suddividere, se vuoto assume 50 di default.
+:return: n_art_list: list, lista del numero di artisti da classificare per genere.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="main.numero_occorenze">
+<code class="sig-prename descclassname">main.</code><code class="sig-name descname">numero_occorenze</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lista_generi</span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.numero_occorenze" title="Permalink to this definition">¶</a></dt>
+<dd><p>Conta e restituisce il numero di occorrenze totali, presente nella lista.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>lista_generi</strong> – list, lista dei generi con il rispettivo numero di occorrenze</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>count: int, numero di occorenze totali.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="main.priority_for_genres">
+<code class="sig-prename descclassname">main.</code><code class="sig-name descname">priority_for_genres</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">artisti_genres</span></em>, <em class="sig-param"><span class="n">album_list</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.priority_for_genres" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che prende in input la lista degli ID di tutti i generi musicali eseguiti dagli artisti e degli album
+inseriti (album opzionali).
+Restituisce la lista con i primi tre generi in ordine di numero di occorrenze.
+La lista è influenzata dalla presenza degli album, questo significa che nel caso di molteplici generi con lo stesso
+numero di occorrenzze, i generi presenti sia in artisti che album verranno inseriti in lista, in maniera
+prioritaria, a discapito di generi con lo stesso numero di occorrenze, presenti solo tra gli artisti.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>artisti_genres</strong> – list, lista di tutti i generi musicali degli artisti inseriti in input.</p></li>
+<li><p><strong>album_list</strong> – list, lista di Album, contiene tutti i dati relativi agli album inseriti</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>primi_tre_generi: list, lista di id id generi.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="main.read_albums">
+<code class="sig-prename descclassname">main.</code><code class="sig-name descname">read_albums</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conn_db</span></em>, <em class="sig-param"><span class="n">album_list_saved</span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.read_albums" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione utilizzata per prendere in input gli album preferiti di un utente.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conn_db</strong> – ditc, connessione al database.</p></li>
+<li><p><strong>album_list_saved</strong> – list, lista di album gia presenti nella lista.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>album_list_saved: list, lista degli album inseriti dall’utente più i nuovi inseriti.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="main.read_artists">
+<code class="sig-prename descclassname">main.</code><code class="sig-name descname">read_artists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conn_db</span></em>, <em class="sig-param"><span class="n">artist_list_saved</span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.read_artists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione utilizzata per prendere in input gli artisti preferiti di un utente.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conn_db</strong> – dict, connessione al database.</p></li>
+<li><p><strong>artist_list_saved</strong> – list, lista di artisti gia presenti nella lista.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>artist_list_saved: list, lista degli artisti inseriti dall’utente più i nuovi altri.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Francesco Barile
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

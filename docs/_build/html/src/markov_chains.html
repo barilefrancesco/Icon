@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>markov_chains module &mdash; Music Advisor  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="playlist_generator module" href="playlist_generator.html" />
+    <link rel="prev" title="postgreSQL module" href="postgreSQL.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Music Advisor
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postgreSQL.html">postgreSQL module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">markov_chains module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="playlist_generator.html">playlist_generator module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email_requests.html">email_requests module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Music Advisor</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>markov_chains module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/src/markov_chains.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-markov_chains">
+<span id="markov-chains-module"></span><h1>markov_chains module<a class="headerlink" href="#module-markov_chains" title="Permalink to this headline">¶</a></h1>
+<p>&#64;author: Francesco Barile 677396</p>
+<dl class="py function">
+<dt id="markov_chains.markov_chains">
+<code class="sig-prename descclassname">markov_chains.</code><code class="sig-name descname">markov_chains</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lista_generi_occorrenze</span></em><span class="sig-paren">)</span><a class="headerlink" href="#markov_chains.markov_chains" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione principale per il calcolo della percentuale di gradimento per ogni genere e fatto in due modi, con tre
+stage e successivamente con due.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>lista_generi_occorrenze</strong> – list, lista delle coppie genere(id)-occorrenze</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>result, dict, contiene tutte le percentuali calcolate dalle catene di Markov</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="markov_chains.normalize_transition_matrix">
+<code class="sig-prename descclassname">markov_chains.</code><code class="sig-name descname">normalize_transition_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">transition_matrix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#markov_chains.normalize_transition_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione che serve per la normalizzazione dei valori presenti in ‘transition_matrix’ qualora la somma risulti
+maggiore o minore di 1.0</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>transition_matrix</strong> – list of list, contiene le liste delle percentuali da normalizzare</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>transition_matrix: list of list, transition_matrix normalizzata.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="markov_chains.percentage_rate_genre">
+<code class="sig-prename descclassname">markov_chains.</code><code class="sig-name descname">percentage_rate_genre</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_status</span></em>, <em class="sig-param"><span class="n">end_status</span></em>, <em class="sig-param"><span class="n">work_dict</span></em>, <em class="sig-param"><span class="n">n_states</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#markov_chains.percentage_rate_genre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calcolo della percentuale basandoci sui valori ottenuti dalla funzione precedente ed iterandoli per 10 mila volte,
+per cercare di ottenere un risultato preciso.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_status</strong> – str, genere di partenza, passata alla funzione ‘probable_genre_path’.</p></li>
+<li><p><strong>end_status</strong> – str, nome</p></li>
+<li><p><strong>work_dict</strong> – contiene il dict generato dalla funzione ‘set_work_values’.</p></li>
+<li><p><strong>n_states</strong> – int, numero di stage della catena di Markov, se non è settato è impostato a 2 di default.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>percentage: float, percentuale di gradiemento del genere ‘end_status’</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="markov_chains.probable_genre_path">
+<code class="sig-prename descclassname">markov_chains.</code><code class="sig-name descname">probable_genre_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_state</span></em>, <em class="sig-param"><span class="n">work_dict</span></em>, <em class="sig-param"><span class="n">n_states</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#markov_chains.probable_genre_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Geenra un percorso casuale di transizioni di genere, serve per calcolare la probabilità di gradimento dei generi.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_state</strong> – str, genere di partenza.</p></li>
+<li><p><strong>work_dict</strong> – contiene il dict generato dalla funzione precedente.</p></li>
+<li><p><strong>n_states</strong> – int, numero di stage che passimo, se non è settato, è impostato a 2.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>genre_prob_list: list, lista di generi (id) attraversasti dalla catena.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="markov_chains.set_work_values">
+<code class="sig-prename descclassname">markov_chains.</code><code class="sig-name descname">set_work_values</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lista_generi_occorrenze</span></em><span class="sig-paren">)</span><a class="headerlink" href="#markov_chains.set_work_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Funzione per creare le variabili di lavoro ‘transition_matrix’ e ‘transition_name’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>lista_generi_occorrenze</strong> – list, contiene la lista delle coppie genere (id)-occorrenze</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dict, con ‘states’ lista di generi (id), ‘transition_name’lista di nomi significativi per le transizioni e
+‘transition_matrix’ lista dei valori associati alle transizioni.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="playlist_generator.html" class="btn btn-neutral float-right" title="playlist_generator module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="postgreSQL.html" class="btn btn-neutral float-left" title="postgreSQL module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Francesco Barile
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
