@@ -1,7 +1,0 @@
-texttable module
-================
-
-.. automodule:: texttable
-    :members:
-    :undoc-members:
-    :show-inheritance:
