@@ -10,12 +10,15 @@ from selenium import webdriver
 def get_code():
     """
     Funzione che serve per acquisire il code dell'utente, partendo dal suo account di spotify.
+
     :return: code: str, code generato dopo aver effettuato l'accesso a spotify.
     """
     # Apro su chromium la pagina di accesso a spotify
     browser = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver")
-    browser.get("https://accounts.spotify.com/authorize?client_id=903d61966dab4facb136cdf918b42fba&scopes=playlist-"
-                "read-private&response_type=code&redirect_uri=http%3A%2F%2Fmemorycloud.altervista.org%2F")
+
+    browser.get("https://accounts.spotify.com/authorize?client_id=903d61966dab4facb136cdf918b42fba&"
+                "scope=playlist-modify-private&scope=playlist-modify-public&response_type=code&"
+                "redirect_uri=http%3A%2F%2Fmemorycloud.altervista.org%2F")
 
 
     while True:
@@ -30,6 +33,7 @@ def get_code():
 def request_access_token():
     """
     Funzione che serve per acquisire l'access token, per poter eseguire le API request su spotify.
+
     :return: str, access token; False se cè un problema di autenticazione legato al code.
     """
     code = get_code()
@@ -59,6 +63,7 @@ def request_access_token():
 def request_playlist_id(access_token, playlist_name):
     """
     Funzione che con l'access token e il nome della playlist, cerca e restituisce, l'id id quest'ultimo.
+    
     :param access_token: str, stringa generata da spotify.
     :param playlist_name: str, nome della playlist da cercare.
     :return: str, id della playlist.
@@ -80,7 +85,8 @@ def request_playlist_id(access_token, playlist_name):
 
 def get_playlist_items(access_token, id_playlist, number_items):
     """
-    Funzione che restituisce la lista dei primi 'number_items' della playlist specificata da 'id_playlist'
+    Funzione che restituisce la lista dei primi 'number_items' della playlist specificata da 'id_playlist'.
+
     :param access_token: str, stringa generata da spotify.
     :param id_playlist: str, id della playlist.
     :param number_items: int, numero di canzoni da recuperare dalla playlist
@@ -106,8 +112,77 @@ def get_playlist_items(access_token, id_playlist, number_items):
     for i in items:
         title = i['track']['name']
         artist = i['track']['artists'][0]['name']
-        track_list.append({'title': title, 'artist': artist})
+        uri = i['track']['uri']
+        track_list.append({'title': title, 'artist': artist, 'uri': uri})
     return track_list
+
+
+def get_user_id(access_token):
+    """
+    Funzione che richiede l'user_id per poter successuvamente creare la playlist.
+
+    :param access_token: str, stringa generata da spotify.
+    :return: user_id: str, id dell'utente.
+    """
+    headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + access_token,
+    }
+
+    response = requests.get('https://api.spotify.com/v1/me', headers=headers)
+    user_id = json.loads(response.text)['id']
+    return user_id
+
+
+def create_playlist(access_token, generi, track_list):
+    """
+    Funzione che crea e inserisce gli items all'interno della playlist creata.
+
+    :param access_token: str, stringa generata da spotify.
+    :param generi: list, contiene i nomi dei generi.
+    :param track_list: dict, contiene le canzoni in particolare viene utilizzata la uri delle canzoni.
+    """
+    headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + access_token,
+    }
+
+    playlist_name = generi[0] + '_' + generi[1] + '_' + generi[2]
+    data = '{"name":"' + str(playlist_name).replace(' ', '-') + '","description":"' + str(playlist_name).replace(' ', '-') + ' playlist","public":false}'
+
+    user_id = get_user_id(access_token)
+    response = requests.post('https://api.spotify.com/v1/users/' + user_id + '/playlists', headers=headers,
+                             data=data)
+    x = json.loads(response.text)
+    playlist_id = x['id']
+
+    add_items_playlist(access_token, playlist_id, track_list)
+    print('Playlist creata con successo!')
+
+
+def add_items_playlist(access_token, playlist_id, track_list):
+    """
+    Funzione che inserisce le canzoni all'interno della playist appena creata
+
+    :param access_token: str, stringa generata da spotify.
+    :param playlist_id: str, id della playlist creata.
+    :param track_list: list, lista di dict conteneti informazioni legate alle canzoni da inserire
+    :return: user_id: str, id dell'utente.
+    """
+    headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + access_token,
+    }
+
+    for track in track_list:
+        params = (
+            ('uris', track['uri']),
+        )
+        response = requests.post('https://api.spotify.com/v1/playlists/' + playlist_id + '/tracks', headers=headers,
+                                 params=params)
 
 
 """
@@ -121,3 +196,4 @@ if __name__ == '__main__':
     
     print(tracklist)
 """
+
