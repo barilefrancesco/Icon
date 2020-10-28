@@ -1,7 +1,0 @@
-decouple module
-===============
-
-.. automodule:: decouple
-    :members:
-    :undoc-members:
-    :show-inheritance:
