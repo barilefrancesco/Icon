@@ -9,7 +9,8 @@ from postgreSQL import get_id_sub_genre, get_id_prim_genre
 def normalize_transition_matrix(transition_matrix):
     """
     Funzione che serve per la normalizzazione dei valori presenti in 'transition_matrix' qualora la somma risulti
-    maggiore o minore di 1.0
+    maggiore o minore di 1.0.
+
     :param transition_matrix: list of list, contiene le liste delle percentuali da normalizzare
     :return: transition_matrix: list of list, transition_matrix normalizzata.
     """
@@ -42,7 +43,8 @@ def normalize_transition_matrix(transition_matrix):
 
 def set_work_values(lista_generi_occorrenze):
     """
-    Funzione per creare le variabili di lavoro 'transition_matrix' e 'transition_name'
+    Funzione per creare le variabili di lavoro 'transition_matrix' e 'transition_name'.
+
     :param lista_generi_occorrenze: list, contiene la lista delle coppie genere (id)-occorrenze
     :return: dict, con 'states' lista di generi (id), 'transition_name'lista di nomi significativi per le transizioni e
             'transition_matrix' lista dei valori associati alle transizioni.
@@ -91,6 +93,7 @@ def set_work_values(lista_generi_occorrenze):
 def probable_genre_path(start_state, work_dict, n_states=2):
     """
     Geenra un percorso casuale di transizioni di genere, serve per calcolare la probabilità di gradimento dei generi.
+
     :param start_state: str, genere di partenza.
     :param work_dict: contiene il dict generato dalla funzione precedente.
     :param n_states: int, numero di stage che passimo, se non è settato, è impostato a 2.
@@ -156,6 +159,7 @@ def percentage_rate_genre(start_status, end_status, work_dict, n_states=2):
     """
     Calcolo della percentuale basandoci sui valori ottenuti dalla funzione precedente ed iterandoli per 10 mila volte,
     per cercare di ottenere un risultato preciso.
+
     :param start_status:  str, genere di partenza, passata alla funzione 'probable_genre_path'.
     :param end_status: str, nome
     :param work_dict: contiene il dict generato dalla funzione 'set_work_values'.
@@ -187,6 +191,7 @@ def markov_chains(lista_generi_occorrenze):
     """
     Funzione principale per il calcolo della percentuale di gradimento per ogni genere e fatto in due modi, con tre
     stage e successivamente con due.
+
     :param lista_generi_occorrenze: list, lista delle coppie genere(id)-occorrenze
     :return: result, dict, contiene tutte le percentuali calcolate dalle catene di Markov
     """
