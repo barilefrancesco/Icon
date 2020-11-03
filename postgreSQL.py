@@ -36,6 +36,7 @@ def create_db():
 def conn_db(user, database):
     """
     Funzione utilizzata per creare una connessione con il database.
+
     :param user: str, utente con cui accediamo al db.
     :param database: str, nome del database
     :return: dict, contiene le chiavi cursor e connection per effettuare le operazioni sul db selezionato.
@@ -318,6 +319,7 @@ def draw_album_table(header, rows):
     """
     Funzione utilizzata per stamapre a video una tabella contenete tutti gli album corispondenti alla ricerca
     dell'utente.
+
     :param header: list, contiene gli elementi dell'header della tabella.
     :param rows: list, lista degli album da inseire nella tabella, con nome e generi associati ad esso.
     """
@@ -334,6 +336,7 @@ def draw_artist_table(header, rows):
     """
     Funzione utilizzata per stamapre a video una tabella contenete tutti gli artisti corispondenti alla ricerca
     dell'utente.
+
     :param header: list, contiene gli elementi dell'header della tabella.
     :param rows: list, lista degli artist da inseire nella tabella, con nome e generi associati ad esso.
     """
@@ -352,6 +355,7 @@ def draw_artist_table(header, rows):
 def search_album_db(conn, value):
     """
     Funzione che verifica se l'album inserito è presente nel database.
+
     :param conn: dict, connessione al database.
     :param value: str, nome dell'album di cui si verifica la presenza.
     :return: album_found: dict, contiene le informazioni relative all'album trovato.
@@ -398,11 +402,10 @@ def search_album_db(conn, value):
                 elif scelta.lower() == 'y':
                     return album_found
         else:
-            print('\nSono state trovate le seguenti ' + str(len(list_album)) + ' istanze, scegli l\'album che stavi '
-                                                                               'cercando tra questi (inserisci il numero presente nella prima colonna, 0 se nessunoo di questi '
-                                                                               'corrisponde alla ricerca)')
-
             draw_album_table(['Choose', 'Name album', 'Genres', 'Artist'], list_album)
+            print('\nSono state trovate ' + str(len(list_album)) + ' istanze, scegli l\'album che stavi '
+                  'cercando tra questi (inserisci il numero presente nella prima colonna, 0 se nessunoo di questi '
+                  'corrisponde alla ricerca)')
             while True:
                 scelta = input('Inserisci la tua scelta (da 1 a ' + str(len(list_album)) + '):')
                 if 1 <= int(scelta) <= len(list_album):
@@ -418,7 +421,8 @@ def search_album_db(conn, value):
 
 def search_artist_db(conn, value):
     """
-    Funzione che verifica se l'artista è presente nel database
+    Funzione che verifica se l'artista è presente nel database.
+
     :param conn: dict, connessione al database.
     :param value: str, nome dell'artista di cui si verifica la presenza.
     :return: artists_found: dict, contiene le informazioni relative all'artista trovato.
@@ -481,6 +485,7 @@ def search_artist_db(conn, value):
 def get_genres_list_from_artist(artisti):
     """
     Funzione che prende in input la lista degli artisti e restiruisce la lista degli id dei generi associati.
+
     :param artisti: list, lista di artisti
     :return: genres: list, lista degli id relativi ai generi suonati dagli artisti.
     """
@@ -502,6 +507,7 @@ def get_genres_list_from_artist(artisti):
 def get_artist_from_id(id_artist):
     """
     Funzione che prende in input l'id dell'artista e restituisce il suo nome.
+
     :param id_artist: str, id dell'artista.
     :return: art_name: str, nome dell'artista
     """
@@ -516,6 +522,7 @@ def get_artist_from_id(id_artist):
 def get_name_by_id_genre(id_genre):
     """
     Funzione che prende in input l'id del genere e restituisce il nome associato.
+
     :param id_genre: str, id del genere.
     :return: n_g: str, nome genere.
     """
@@ -530,6 +537,7 @@ def get_name_by_id_genre(id_genre):
 def get_id_sub_genre(id_genre):
     """
     Funzione che pardendo dall'id del genere, restituisce l'id del suo genere padre presente nella tabella sub_genre.
+
     :param id_genre: str, id genere dalla tabella genre
     :return: s_g: int, id sub_genre padre del genre 'id_genre'.
     """
@@ -545,6 +553,7 @@ def get_id_prim_genre(id_sub_genre):
     """
     Funzione che pardendo dall'id del sub_genre, restituisce l'id del suo genere padre presente nella tabella
     primary_genre.
+
     :param id_sub_genre: str, id genere dalla tabella sub_genre
     :return: p_g: int, id primary_genre padre del genere 'id_sub_genre'.
     """
@@ -560,6 +569,7 @@ def delete_genres_from_list(genres, pos_id_gen):
     """
     Funzione che restituisce la lista dei generi (id) sottoforma di stringa, escluso quello di riferimento in
     posizione 'pos_id_gen'.
+
     :param genres: list, lista degli id dei generi
     :param pos_id_gen: int, posizione del genere (id) da esclude dalla coppia in output.
     :return: str, composto da due generi (id).
@@ -575,6 +585,7 @@ def delete_genres_from_list(genres, pos_id_gen):
 def get_artist_list(genres, pos_id_gen, limit_num_artist):
     """
     Funzione che restituisce gli artisti che suonano il genere genres[pos_id_gen], escludendo gli altri due generi.
+
     :param genres: list,  lista di generi (id)
     :param pos_id_gen: int, posizione del genere da considerare per la lista di artisti in output.
     :param limit_num_artist: int, numero massimo di artisti da cercare all'interno del database.
@@ -608,6 +619,7 @@ def get_artist_list(genres, pos_id_gen, limit_num_artist):
 def get_list_artist_three_genres(gen_list, input_artist_id_list):
     """
     Funzione che restituisce gli artisti che suonano tutti i generi della lista gen_list. (Potrebbe essere vuota)
+
     :param gen_list: list, lista dei generi (id).
     :param input_artist_id_list: list, lista degli artisti (id) inseriti dall'utente, da escludere nella ricerca.
     :return: lista_artisti: list, lista degli artisti trovati; None, se non viene trovato nessun artista.
@@ -657,6 +669,7 @@ def get_list_artist_three_genres(gen_list, input_artist_id_list):
 def get_list_artist_two_genres(gen_list, input_artist_id_list):
     """
     Funzione che restituisce gli artisti che suonano due dei tre generi presenti nella lista 'gen_list'.
+
     :param gen_list: list, lista di generi (id).
     :param input_artist_id_list: list, lista di artisti inseriti dall'utente, da escludere nella query.
     :return: lista_artisti: list, lista degli artisti trovati; None, se non viene trovato nessun artista.
