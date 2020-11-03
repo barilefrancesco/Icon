@@ -63,7 +63,8 @@ RECEVER_EMAIL=email_recever@mail.com
 DB_NAME=music_db
 DB_USERNAME=postgres
 ```
-    To allow the access, we need to set 'Less Secure App Access' settings in the google account. If the two step verification is on, we cannot use the less secure access.
+    To allow the access, we need to set 'Less Secure App Access' settings in the google account. 
+    If the two step verification is on, we cannot use the less secure access.
 
 - Run code.
 ```bash
