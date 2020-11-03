@@ -63,8 +63,8 @@ def request_access_token():
 def request_playlist_id(access_token, playlist_name):
     """
     Funzione che con l'access token e il nome della playlist, cerca e restituisce, l'id id quest'ultimo.
-    
     :param access_token: str, stringa generata da spotify.
+
     :param playlist_name: str, nome della playlist da cercare.
     :return: str, id della playlist.
     """
@@ -118,12 +118,6 @@ def get_playlist_items(access_token, id_playlist, number_items):
 
 
 def get_user_id(access_token):
-    """
-    Funzione che richiede l'user_id per poter successuvamente creare la playlist.
-
-    :param access_token: str, stringa generata da spotify.
-    :return: user_id: str, id dell'utente.
-    """
     headers = {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -136,13 +130,6 @@ def get_user_id(access_token):
 
 
 def create_playlist(access_token, generi, track_list):
-    """
-    Funzione che crea e inserisce gli items all'interno della playlist creata.
-
-    :param access_token: str, stringa generata da spotify.
-    :param generi: list, contiene i nomi dei generi.
-    :param track_list: dict, contiene le canzoni in particolare viene utilizzata la uri delle canzoni.
-    """
     headers = {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -159,18 +146,10 @@ def create_playlist(access_token, generi, track_list):
     playlist_id = x['id']
 
     add_items_playlist(access_token, playlist_id, track_list)
-    print('Playlist creata con successo!')
+    return playlist_id
 
 
 def add_items_playlist(access_token, playlist_id, track_list):
-    """
-    Funzione che inserisce le canzoni all'interno della playist appena creata
-
-    :param access_token: str, stringa generata da spotify.
-    :param playlist_id: str, id della playlist creata.
-    :param track_list: list, lista di dict conteneti informazioni legate alle canzoni da inserire
-    :return: user_id: str, id dell'utente.
-    """
     headers = {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -183,6 +162,7 @@ def add_items_playlist(access_token, playlist_id, track_list):
         )
         response = requests.post('https://api.spotify.com/v1/playlists/' + playlist_id + '/tracks', headers=headers,
                                  params=params)
+    print('Playlist creata con successo!')
 
 
 """
