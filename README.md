@@ -22,7 +22,6 @@
 - Request the addition of an album in the database via email.
 - Get similar artist list.
 - Get playlist based on prefer genres.
-- Get playlists based on preferred genres.
 - Export playlists to Spotify account.
 
 ---
