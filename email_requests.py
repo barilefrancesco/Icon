@@ -15,6 +15,7 @@ from main import draw_table_two_col
 def exit_from_genres_list():
     """
     Funzione per chiedere all'utente se desidera inserire un altro genere associato all'artista.
+
     :return: boolean, True se l'utente vuole inserire un nuovo genere, False altrimenti.
     """
     while True:
@@ -27,7 +28,8 @@ def exit_from_genres_list():
 
 def email_sender(type, conn):
     """
-    Funzione che manda la mail all'aministratore del sistema
+    Funzione che manda la mail all'aministratore del sistema.
+
     :param type: int, valori possibili: 1, 2; 1 se la richiesta è relativa ad un artista, 2 se ad un album.
     :param conn: dict, connessione al database.
     :return: boolean, True se l'email è mandata con successo, False altriemnti.
