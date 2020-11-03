@@ -14,6 +14,7 @@ from postgreSQL import *
 def menu(flag_prob, flag_clas):
     """
     Funzione che mostra a video il menu di scelta.
+
     :param flag_prob: boolean, serve per verificare che siano stati inseriti gli artisti prima dell'esecuzione della
                       atena di Markov.
     :param flag_clas: boolen, verifica l'esecuzione della catena di Markov al fine di poter creare le classifiche e la playlist.
@@ -55,6 +56,7 @@ def clear_console():
 def exit_from_input(name):
     """
     Funzione che serve per capire se l'utente ha intenzione di inserire un altro album o un altro artista.
+
     :param name: string, prende in input le stirnghe 'album' o 'artista'.
     :return: boolean, True, se l'utente desidera inserire un altro 'name', False altrimenti.
     """
@@ -69,6 +71,7 @@ def exit_from_input(name):
 def read_artists(conn_db, artist_list_saved):
     """
     Funzione utilizzata per prendere in input gli artisti preferiti di un utente.
+
     :param conn_db: dict, connessione al database.
     :param artist_list_saved: list, lista di artisti gia presenti nella lista.
     :return: artist_list_saved: list, lista degli artisti inseriti dall'utente più i nuovi altri.
@@ -90,6 +93,7 @@ def read_artists(conn_db, artist_list_saved):
 def read_albums(conn_db, album_list_saved):
     """
     Funzione utilizzata per prendere in input gli album preferiti di un utente.
+
     :param conn_db: ditc, connessione al database.
     :param album_list_saved: list, lista di album gia presenti nella lista.
     :return: album_list_saved: list, lista degli album inseriti dall'utente più i nuovi inseriti.
@@ -116,6 +120,7 @@ def priority_for_genres(artisti_genres, album_list=None):
     La lista è influenzata dalla presenza degli album, questo significa che nel caso di molteplici generi con lo stesso
     numero di occorrenzze, i generi presenti sia in artisti che album verranno inseriti in lista, in maniera
     prioritaria, a discapito di generi con lo stesso numero di occorrenze, presenti solo tra gli artisti.
+
     :param artisti_genres: list, lista di tutti i generi musicali degli artisti inseriti in input.
     :param album_list: list, lista di Album, contiene tutti i dati relativi agli album inseriti
     :return: primi_tre_generi: list, lista di id id generi.
@@ -187,7 +192,8 @@ def priority_for_genres(artisti_genres, album_list=None):
 
 def numero_occorenze(lista_generi):
     """
-    Conta e restituisce il numero di occorrenze totali, presente nella lista
+    Conta e restituisce il numero di occorrenze totali, presente nella lista.
+
     :param lista_generi: list, lista dei generi con il rispettivo numero di occorrenze
     :return: count: int, numero di occorenze totali.
     """
@@ -199,7 +205,8 @@ def numero_occorenze(lista_generi):
 
 def num_artist_for_genre(lista_generi, n_of_artists=50):
     """
-    Funzione che restituisce il numero di artisti da classificare in base alle occorrenze dei generi
+    Funzione che restituisce il numero di artisti da classificare in base alle occorrenze dei generi.
+
     :param lista_generi: list, contiene id genere-occorrenze per ogni elemento della lista.
     :param n_of_artists: numero degli artisti da suddividere, se vuoto assume 50 di default.
     :return: n_art_list: list, lista del numero di artisti da classificare per genere.
@@ -228,6 +235,7 @@ def remove_input_artist(list_of_artist, input_artist_id_list, number_of_artists)
 def genres_liked(genre_list):
     """
     Funzione che stampa a video il tasso percentuale di gradiemto dei generi selezionati.
+
     :param genre_list: list, lista di coppie id_genre-percenutale calcolata con la catena di Markov
     """
     for genre in genre_list:
@@ -239,6 +247,7 @@ def classifica_sigle_genre(n_art_list, single_genre_list):
     """
     Attravero le interrogazioni al database acquisisco gli artisti con uno ed uno solo dei tre generi in lista,
     successivamente vengono stampati a video attraverso una visualizzazione tabellare.
+
     :param n_art_list: list, lista del numero di artisti da acquisire per genere.
     :param single_genre_list: list, lista degli id_genre,
     :return: list_of_artist: list, lista di tutti gli artisti classificati.
@@ -256,6 +265,7 @@ def classifica_all_genres(gen_list, input_artist_id_list):
     """
     Funzione che stampa a video tutti gli artisti presenti nel database che hanno tutti e tre i generi
     della lista 'gen_list', sempre se esistono, altriementi prova a cercare gli artisti con coppie di generi.
+
     :param gen_list: list, lista degli id_genre
     :param input_artist_id_list: list, lista degli id degli artisti inseriti in input
     """
@@ -296,7 +306,8 @@ def classifica_all_genres(gen_list, input_artist_id_list):
 
 def get_genre_list(genres_occ):
     """
-    Funzione che prende in input la lista delle coppie id_genre-occorrenze e restituisce la lista dei soli id_genre
+    Funzione che prende in input la lista delle coppie id_genre-occorrenze e restituisce la lista dei soli id_genre.
+
     :param genres_occ: list, lista delle coppie id_genre-occorrenze
     :return: g_list: list,  la lista dei soli id_genre
     """
@@ -309,6 +320,7 @@ def get_genre_list(genres_occ):
 def draw_table_two_col(header, rows):
     """
     Funzione utilizzata per stampare a video una tabella generica di 2 o tre colonne.
+
     :param header: list, Contiene gli elementi dell'header della tabella.
     :param rows: list, lista degli artist da inseire nella tabella, con nome e generi associati ad esso.
     :return:
@@ -341,20 +353,12 @@ def draw_table_tracklist(header, rows):
     :param rows: list, tracklist da inseire nella tabella, con titolo e artista associati ad esso.
     """
     try:
-        if len(rows[0]) == 2:
-            t = Texttable()
-            t.add_row(header)
-
-            for r in rows:
-                x = r['title']
-                t.add_row([r['title'], r['artist']])
-            print(t.draw())
-        else:
-            t = Texttable()
-            t.add_row(header)
-            for r in rows:
-                t.add_row([r[0], r[1], r[2]])
-            print(t.draw())
+        t = Texttable()
+        t.add_row(header)
+        for r in rows:
+            x = r['title']
+            t.add_row([r['title'], r['artist']])
+        print(t.draw())
     except:
         # Entra in except quando la tabella non ha righe
         print('')
@@ -384,9 +388,18 @@ def create_playlist_from_music_genre(generi_list):
             tracklists = tracklists + tracklist
             # tracklists.append(tracklist)
     draw_table_tracklist(['Titolo', 'Artista'], tracklist)
+
+    while True:
+        scelta = input('Vuoi inseirire questa playlist in spotify? (y/n): ')
+        if scelta.lower() in ['y', 'n']:
+            break
+    if scelta == 'y':
+        generi_name_list = [get_name_by_id_genre(generi_list[0][0]), get_name_by_id_genre(generi_list[1][0]),
+                            get_name_by_id_genre(generi_list[2][0])]
+        create_playlist(at, generi_name_list, tracklists)
     return tracklists
 
-    
+
 if __name__ == '__main__':
     # Crea il database se non esiste
     crete_music_database()
@@ -422,13 +435,34 @@ if __name__ == '__main__':
             flag_p = True
             generi_artisti = get_genres_list_from_artist(artist_list)
             if album_list:
-                lista_generi = priority_for_genres(generi_artisti, album_list)
+                num_of_gen = len(generi_artisti)
+                albums_id_genre = []
+                for album in album_list:
+                    if album['id_genere'] not in generi_artisti and album['id_genere'] not in albums_id_genre:
+                        albums_id_genre.append(album['id_genere'])
+                        num_of_gen += 1
+                if num_of_gen >= 3:
+                    lista_generi = priority_for_genres(generi_artisti, album_list)
+                    result = markov_chains(lista_generi)
+                    genres_liked(result["single_genre"])
+                    flag_c = True
+                else:
+                    print(f'Il numero dei generi associata agli artisti e agli album inseriti non è sufficiente!\n'
+                          f'Prima di poter eseguire il calcolo, assicurati che i generi siano almeno tre, attualmente '
+                          f'sono {num_of_gen}.\n'
+                          f'Riprova, inserendo un artista o un album.\n')
             else:
-                lista_generi = priority_for_genres(generi_artisti)
+                if len(generi_artisti) >= 3:
+                    lista_generi = priority_for_genres(generi_artisti)
+                    result = markov_chains(lista_generi)
+                    genres_liked(result["single_genre"])
+                    flag_c = True
+                else:
+                    print(f'Il numero dei generi associata agli artisti inseriti non è sufficiente!\n'
+                          f'Prima di poter eseguire il calcolo, assicurati che i generi siano almeno tre, attualmente '
+                          f'sono {len(generi_artisti)}.\n'
+                          f'Riprova, inserendo un artista o un album.\n')
             # print(lista_generi)
-            result = markov_chains(lista_generi)
-            genres_liked(result["single_genre"])
-            flag_c = True
             # Es: [(16, 3), (13, 2), (132, 2)] coppie genere-occorrenze
         elif s == 6:
             # print('Genera classifica')
