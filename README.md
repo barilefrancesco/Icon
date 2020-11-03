@@ -55,6 +55,15 @@ cd icon/
 ```bash
 pip install -r requirements.txt
 ```
+- Insert values in .env file, for example:
+```bash
+SENDER_EMAIL=email_sender@mail.com
+PASSWORD_SENDER=psw12345678
+RECEVER_EMAIL=email_recever@mail.com
+DB_NAME=music_db
+DB_USERNAME=postgres
+```
+
 - Run code.
 ```bash
 python main.py
